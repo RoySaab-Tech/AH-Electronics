@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AH-Electronics - Your Trusted Electronics Store</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-yellow: #fbbf24;
+            --secondary-blue: #1d4ed8;
+            --secondary-yellow: #f59e0b;
+        }
+        
+        .custom-blue { color: var(--primary-blue); }
+        .custom-yellow { color: var(--primary-yellow); }
+        .bg-custom-blue { background-color: var(--primary-blue); }
+        .bg-custom-yellow { background-color: var(--primary-yellow); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+      </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+            <div class="flex items-center mr-2">
+            <img src="images/la 2.PNG" alt="logo" class="object-cover w-15 h-15 justify-center" style="background:transparent;" />
+            </div>
+            <a href="#home" class="btn btn-ghost text-xl custom-blue">AH-Electronics</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+            <label class="swap swap-rotate">
+                <input type="checkbox" class="theme-controller" value="light" />
+                <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+                </svg>
+                <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen hero-gradient">
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <div class="logo-container flex flex-col items-center justify-center mb">
+                    <img src="images/la 2.PNG" alt="logo" class="object-contain w-100 h-100 mb-0"/>
+                    <div class="logo">AH-Electronics</div>
+                </div>
+                <h1 class="mb-5 text-5xl font-bold">Welcome to AH-Electronics</h1>
+                <p class="mb-5">Your trusted source for quality electronics and gadgets. We provide the best products with excellent customer service.</p>
+                <a href="#products" class="btn bg-custom-yellow text-black hover:bg-yellow-400">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-base-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 custom-blue">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <figure class="px-6 pt-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BPPydCu2pt90p0EBS4KWEadORvTrYElqHg&s" alt="" class="w-full h-48 rounded-lg flex items-center justify-center">
+                           
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title text-xl">Smart Power Strip</h3>
+                        <p class="text-gray-600"> A Wi-Fi-enabled smart power strip with 4 outlets and 3 USB ports. Control
+                            your devices remotely using your smartphone. Great for home or office use.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-2xl font-bold custom-blue">$18.99</span>
+                            <button onclick="orderProduct('Smart Power Strip', '$18.99')" class="btn bg-custom-yellow text-black hover:bg-yellow-400">
+                                <i class="fab fa-whatsapp mr-2"></i>Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <figure class="px-6 pt-6">
+                        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg" alt="" class=" object-cover h-48 bg-gradient-to-br from-blue-400 to-yellow-400 rounded-lg flex items-center justify-center">
+                            
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title text-xl">Wireless Bluetooth Headphones</h3>
+                        <p class="text-gray-600">Lightweight and comfortable Bluetooth headphones with up to 15 hours of
+                            battery life and excellent sound quality. Perfect for music lovers on the go.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-2xl font-bold custom-blue">$29.99</span>
+                            <button onclick="orderProduct('Wireless Bluetooth Headphones', '$29.99')" class="btn bg-custom-yellow text-black hover:bg-yellow-400">
+                                <i class="fab fa-whatsapp mr-2"></i>Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <figure class="px-6 pt-6">
+                        <img src="https://i.pcmag.com/imagery/reviews/07lezEmMUqETG4a3P67IIpp-5..v1691605585.png" alt="" class="object-cover h-48 bg-gradient-to-br from-blue-400 to-yellow-400 rounded-lg flex items-center justify-center">
+                            
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title text-xl">Smart LED lightbulb</h3>
+                        <p class="text-gray-600"> Energy-saving smart LED bulb that can change colors and be controlled by
+                            app or voice. Works with Alexa and Google Assistant.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-2xl font-bold custom-blue">$9.99</span>
+                            <button onclick="orderProduct('Smart LED lightbulb', '$9.99')" class="btn bg-custom-yellow text-black hover:bg-yellow-400">
+                                <i class="fab fa-whatsapp mr-2"></i>Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <figure class="px-6 pt-6">
+                        <img src="https://media.wired.com/photos/6504b2a1afe02332db973557/4:3/w_960,c_limit/Ugreen_Power_Bank-SOURCE-Ugreen-Gear.jpg" alt="" class="w-full h-48 bg-gradient-to-br from-blue-400 to-yellow-400 rounded-lg flex items-center justify-center">
+                            
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title text-xl">Portable Powerbank</h3>
+                        <p class="text-gray-600">Compact and powerful portable charger to keep your devices powered
+                            all day. Comes with dual USB ports and LED battery indicator. (10,000mAh)Compact and powerful portable charger to keep your devices powered
+                            all day. Comes with dual USB ports and LED battery indicator. (10,000mAh)Compact and powerful portable charger to keep your devices powered
+                            all day. Comes with dual USB ports and LED battery indicator. (10,000mAh)</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-2xl font-bold custom-blue">$14.99</span>
+                            <button onclick="orderProduct('Portable Powerbank', '$14.99')" class="btn bg-custom-yellow text-black hover:bg-yellow-400">
+                                <i class="fab fa-whatsapp mr-2"></i>Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-base-200">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 custom-blue">About AH-Electronics</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 custom-yellow">Welcome to AH-Electronics!</h3>
+                        <p class="text-lg mb-4">
+                            We are a local electronics shop that offers a variety
+of smart and useful tech products to make your
+everyday life easier. From smart home gadgets to
+mobile accessories, we focus on providing quality
+products at affordable prices.
+
+                        </p>
+                        <p class="text-lg mb-4">
+                            At AH-Electronics, we care about helping people find
+the right tech solutions whether it’s a smart bulb for
+your room, a power bank for your phone, or a
+Bluetooth headset for your music. Every product we
+offer is carefully selected to match what our
+customers really need.
+                        </p>
+                        <p class="text-lg">
+                            We also make it easy for you to order through
+                            WhatsApp with just one click! If you have any
+                            questions or need help, we are always ready to talk.
+                            Thank you for choosing AH-Electronics. We’re excited
+                            to help power your day!
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://images.jdmagicbox.com/comp/armoor/l9/9999p8463.8463.161118170723.k7l9/catalogue/ramdev-electricals-armoor-ho-armoor-electrical-shops-pzkak836lu-250.jpg" alt="" class="object-cover h-64 bg-gradient-to-br from-blue-400 to-yellow-400 rounded-full flex items-center justify-center">
+                           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-base-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 custom-blue">Contact Us</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 custom-yellow">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-2xl custom-blue mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Address</h4>
+                                <p>123 Electronics Street, Tech City, TC 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-2xl custom-blue mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <p>+961 71 387 946</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-instagram text-2xl custom-blue mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Instagram</h4>
+                                <a href="https://instagram.com/omar.af7" target="_blank" class="text-blue-400 hover:underline">@omar.af7</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-2xl custom-blue mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: 12:00 PM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 custom-yellow">Follow Us</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-facebook mr-2"></i>Facebook
+                        </a>
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-instagram mr-2"></i>Instagram
+                        </a>
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-twitter mr-2"></i>Twitter
+                        </a>
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-youtube mr-2"></i>YouTube
+                        </a>
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                        </a>
+                        <a href="#" class="btn btn-outline custom-blue hover:bg-blue-500 hover:text-white">
+                            <i class="fab fa-tiktok mr-2"></i>TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content">
+        <div>
+            <div class="logo custom-yellow text-2xl font-bold">AH-Electronics</div>
+            <p>Your trusted source for quality electronics and gadgets.<br>Providing the best products with excellent customer service.</p>
+        </div>
+        <div>
+            <span class="footer-title">Services</span>
+            <a class="link link-hover">Electronics Sales</a>
+            <a class="link link-hover">Technical Support</a>
+            <a class="link link-hover">Product Consultation</a>
+            <a class="link link-hover">Warranty Service</a>
+        </div>
+        <div>
+            <span class="footer-title">Company</span>
+            <a href="#about" class="link link-hover">About us</a>
+            <a href="#contact" class="link link-hover">Contact</a>
+            <a href="#" class="link link-hover">Careers</a>
+            <a href="#" class="link link-hover">Press kit</a>
+        </div>
+        <div>
+            <span class="footer-title">Social</span>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-youtube text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+    <footer class="footer px-10 py-4 border-t bg-neutral text-neutral-content border-base-300">
+        <div class="items-center grid-flow-col">
+            <p>Copyright © 2024 - All rights reserved by AH-Electronics</p>
+        </div>
+        <div class="md:place-self-center md:justify-self-end">
+            <div class="grid grid-flow-col gap-4">
+                <a href="#"><i class="fab fa-whatsapp text-2xl"></i></a>
+                <a href="#"><i class="fab fa-telegram text-2xl"></i></a>
+  </div>
+</div> 
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/71387946?text=Hi%20AH-Electronics!%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+           target="_blank" 
+           class="btn btn-circle btn-lg bg-green-500 hover:bg-green-600 text-white shadow-lg">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeController = document.querySelector('.theme-controller');
+        
+        // Check for saved theme preference or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeController.checked = currentTheme === 'light';
+        
+        themeController.addEventListener('change', function() {
+            const theme = this.checked ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // WhatsApp order function
+        function orderProduct(productName, price) {
+            const message = `Hi AH-Electronics! I would like to order the ${productName} for ${price}. Please provide me with more details about availability and payment options.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/71387946?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-base-100/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-base-100/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
